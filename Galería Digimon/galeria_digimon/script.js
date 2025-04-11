@@ -18,3 +18,33 @@ const digimones = [
  * 5.	Creamos un botón con el texto “Eliminar Digimon” y se lo agregamos al div.
  * 6.	Agregamos todo el div completo (que contiene la imagen y el botón) al contenedor principal #galeria.
  **/
+
+//1. Seleccionamos el contenedor “galeria” donde vamos a insertar los Digimones
+let galeria = document.querySelector("#galeria") 
+
+//2. Recorrer el arreglo que contiene la URL de cada Digimon for of
+
+for (const digimon of digimones) {
+    let div = document.createElement('div')
+    div.className = 'digimon'
+    let imagen = document.createElement('img')
+    imagen.setAttribute('src', digimon)
+    div.appendChild(imagen)
+    let boton = document.createElement('button')
+    boton.innerText = "Eliminar Digimon"
+    boton.addEventListener('click',function(e) {
+        let elemento = e.target.parentElement
+        elemento.remove()
+    })
+    
+    div.appendChild(boton)
+    galeria.append(div)
+}
+
+
+
+
+/* for (const digimon of digimones) {
+    galeria.innerHTML += "<div class='digimon'><img src='"+digimon+"'><button>Eliminar Digimon</button></div>"
+} */
+
