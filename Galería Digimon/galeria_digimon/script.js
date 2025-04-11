@@ -42,8 +42,6 @@ for (const digimon of digimones) {
 }
 
 
-
-
 /* for (const digimon of digimones) {
     galeria.innerHTML += "<div class='digimon'><img src='"+digimon+"'><button>Eliminar Digimon</button></div>"
 } */
