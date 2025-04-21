@@ -46,3 +46,21 @@ for (const digimon of digimones) {
     galeria.innerHTML += "<div class='digimon'><img src='"+digimon+"'><button>Eliminar Digimon</button></div>"
 } */
 
+for (let index = 1; index < 100; index++) {
+    fetch("https://digi-api.com/api/v1/digimon/" + index)
+    .then((response) => response.json())
+    .then(digimon => {
+        const div = document.createElement("div");
+        div.classList.add("digimon");
+
+        const elemento = document.createElement("img");
+        elemento.setAttribute("src", digimon.images[0].href);
+        div.append(elemento);
+
+        const btnFavoritos = document.createElement("button");
+        btnFavoritos.innerText = "Eliminar Digimon";
+        div.append(btnFavoritos);
+
+        galeria.append(div);
+        });
+    }
