@@ -46,6 +46,8 @@ for (const digimon of digimones) {
     galeria.innerHTML += "<div class='digimon'><img src='"+digimon+"'><button>Eliminar Digimon</button></div>"
 } */
 
+    
+
 for (let index = 1; index < 100; index++) {
     fetch("https://digi-api.com/api/v1/digimon/" + index)
     .then((response) => response.json())
@@ -64,3 +66,12 @@ for (let index = 1; index < 100; index++) {
         galeria.append(div);
         });
     }
+
+    const botones = document.querySelectorAll("button");
+
+for (const boton of botones) {
+    boton.addEventListener("click", function (e) {
+    elemento = e.target.parentElement;
+    elemento.remove();
+    });
+}
